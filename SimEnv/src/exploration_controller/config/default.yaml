@@ -1,0 +1,40 @@
+# 探索控制器配置文件
+
+# 探索参数
+exploration:
+  min_range: 0.5          # 障碍物最近距离(m)，小于此距离需停止或转向
+  max_range: 5.0         # 激光最远检测距离(m)
+  safe_range: 1.5        # 安全跟墙距离(m)
+  turn_speed: 1.0         # 旋转速度(rad/s)
+  forward_speed: 0.6     # 前进速度(m/s)
+  backward_speed: 0.2   # 后退速度(m/s)
+  wall_follow_dist: 1.5  # 沿墙距离(m)
+  explore_mode: "wall_follow"  # 探索模式: wall_follow, random
+
+# 检测参数 - 低虚警率模式
+detection:
+  red_hsv_low_h: 0        # 红色HSV - 色相下限
+  red_hsv_low_s: 120      # 饱和度下限（提高以过滤暗红）
+  red_hsv_low_v: 100      # 明度下限
+  red_hsv_high_h: 10      # 色相上限
+  red_hsv_high_s: 255     # 饱和度上限
+  red_hsv_high_v: 255     # 明度上限
+  min_ball_radius: 10     # 最小检测像素半径
+  max_ball_radius: 100    # 最大检测像素半径
+  depth_filter_min: 0.3   # 深度过滤最小值(m)
+  depth_filter_max: 5.0   # 深度过滤最大值(m)
+
+# 控制参数
+control:
+  look_ahead_dist: 0.8    # 预瞄距离(m)
+  kp_angular: 1.5         # 角度P增益
+  kp_linear: 0.8          # 线性P增益
+  max_linear_speed: 0.5   # 最大线速度(m/s)
+  max_angular_speed: 1.0  # 最大角速度(rad/s)
+  arrival_threshold: 0.5  # 到达目标点阈值(m)
+
+# 输出参数
+output:
+  results_dir: "/home/xiaohei/SimEnv/results"
+  output_interval: 10.0    # 输出间隔(s)，低频输出减少虚警
+  max_exploration_time: 600.0

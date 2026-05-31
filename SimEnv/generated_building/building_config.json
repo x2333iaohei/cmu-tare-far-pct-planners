@@ -1,0 +1,63 @@
+{
+  "building_depth": 24.0,
+  "building_width": 18.0,
+  "danger_count": 0,
+  "distractor_count": 0,
+  "entrance_pose": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "floor_heights": [
+    0.0
+  ],
+  "model_name": "generated_building",
+  "num_floors": 1,
+  "room_count": 1,
+  "schema": "competition_building_config_v1",
+  "seed": 38969332,
+  "target_points": {
+    "elevators": {
+      "0": [
+        1.6500000000000001,
+        2.6,
+        1.2,
+        0.0,
+        0.0,
+        3.141592653589793
+      ]
+    },
+    "main_entrance": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rooms": {
+      "floor_0_room_0": [
+        -4.3,
+        15.88,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "stairs": {
+      "0": [
+        -2.5500000000000003,
+        1.55,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "world_file": "/home/xiaohei/\u63ed\u699c\u6302\u5e05/SimEnv/generated_building/competition_scene.world"
+}

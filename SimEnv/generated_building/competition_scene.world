@@ -1,0 +1,3374 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  
+  
+  <world name="generated_world">
+    
+    
+    <include>
+      
+      
+      <uri>model://sun</uri>
+      
+    
+    </include>
+    
+    
+    <include>
+      
+      
+      <uri>model://ground_plane</uri>
+      
+    
+    </include>
+    
+    
+    <model name="generated_building">
+      
+      
+      <static>true</static>
+      
+      
+      <pose>0 0 0 0 0 0</pose>
+      
+      
+      <link name="foundation">
+        
+        
+        <pose>0.0000 12.0000 -0.1500 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="foundation_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>20.0000 26.0000 0.3000</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="foundation_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>20.0000 26.0000 0.3000</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.58 0.58 0.60 1</ambient>
+            
+            
+            <diffuse>0.58 0.58 0.60 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="entrance_apron">
+        
+        
+        <pose>0.0000 -1.2000 0.0400 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="entrance_apron_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>4.5000 2.4000 0.0800</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="entrance_apron_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>4.5000 2.4000 0.0800</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.62 0.62 0.64 1</ambient>
+            
+            
+            <diffuse>0.62 0.62 0.64 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="slab_floor_0_0">
+        
+        
+        <pose>0.0000 15.9250 -0.1100 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="slab_floor_0_0_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>18.0000 16.1500 0.2200</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="slab_floor_0_0_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>18.0000 16.1500 0.2200</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.76 0.76 0.77 1</ambient>
+            
+            
+            <diffuse>0.76 0.76 0.77 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="slab_floor_0_1">
+        
+        
+        <pose>-6.9700 3.9250 -0.1100 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="slab_floor_0_1_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>4.0600 7.8500 0.2200</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="slab_floor_0_1_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>4.0600 7.8500 0.2200</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.76 0.76 0.77 1</ambient>
+            
+            
+            <diffuse>0.76 0.76 0.77 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="slab_floor_0_2">
+        
+        
+        <pose>-1.3300 3.9250 -0.1100 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="slab_floor_0_2_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.4600 7.8500 0.2200</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="slab_floor_0_2_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.4600 7.8500 0.2200</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.76 0.76 0.77 1</ambient>
+            
+            
+            <diffuse>0.76 0.76 0.77 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="slab_floor_0_3">
+        
+        
+        <pose>0.0000 3.9250 -0.1100 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="slab_floor_0_3_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>2.2000 7.8500 0.2200</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="slab_floor_0_3_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>2.2000 7.8500 0.2200</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.76 0.76 0.77 1</ambient>
+            
+            
+            <diffuse>0.76 0.76 0.77 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="slab_floor_0_4">
+        
+        
+        <pose>1.3300 3.9250 -0.1100 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="slab_floor_0_4_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.4600 7.8500 0.2200</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="slab_floor_0_4_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.4600 7.8500 0.2200</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.76 0.76 0.77 1</ambient>
+            
+            
+            <diffuse>0.76 0.76 0.77 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="slab_floor_0_5">
+        
+        
+        <pose>6.5700 3.9250 -0.1100 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="slab_floor_0_5_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>4.8600 7.8500 0.2200</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="slab_floor_0_5_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>4.8600 7.8500 0.2200</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.76 0.76 0.77 1</ambient>
+            
+            
+            <diffuse>0.76 0.76 0.77 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="stair_edge_infill_floor_0">
+        
+        
+        <pose>-1.6500 3.8500 -0.1100 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="stair_edge_infill_floor_0_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.1800 6.0000 0.2200</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="stair_edge_infill_floor_0_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.1800 6.0000 0.2200</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.76 0.76 0.77 1</ambient>
+            
+            
+            <diffuse>0.76 0.76 0.77 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="exterior_west_floor_0">
+        
+        
+        <pose>-8.9100 12.0000 1.2250 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="exterior_west_floor_0_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.1800 24.0000 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="exterior_west_floor_0_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.1800 24.0000 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.86 0.86 0.88 1</ambient>
+            
+            
+            <diffuse>0.86 0.86 0.88 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="exterior_east_floor_0">
+        
+        
+        <pose>8.9100 12.0000 1.2250 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="exterior_east_floor_0_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.1800 24.0000 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="exterior_east_floor_0_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.1800 24.0000 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.86 0.86 0.88 1</ambient>
+            
+            
+            <diffuse>0.86 0.86 0.88 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="exterior_north_floor_0">
+        
+        
+        <pose>0.0000 23.9100 1.2250 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="exterior_north_floor_0_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>18.0000 0.1800 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="exterior_north_floor_0_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>18.0000 0.1800 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.86 0.86 0.88 1</ambient>
+            
+            
+            <diffuse>0.86 0.86 0.88 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="exterior_south_entrance_left">
+        
+        
+        <pose>-5.0100 0.0900 1.2250 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="exterior_south_entrance_left_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>7.9800 0.1800 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="exterior_south_entrance_left_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>7.9800 0.1800 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.86 0.86 0.88 1</ambient>
+            
+            
+            <diffuse>0.86 0.86 0.88 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="exterior_south_entrance_right">
+        
+        
+        <pose>5.0100 0.0900 1.2250 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="exterior_south_entrance_right_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>7.9800 0.1800 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="exterior_south_entrance_right_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>7.9800 0.1800 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.86 0.86 0.88 1</ambient>
+            
+            
+            <diffuse>0.86 0.86 0.88 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="north_end_wall_floor_0">
+        
+        
+        <pose>0.0000 23.9100 1.2250 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="north_end_wall_floor_0_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>2.2000 0.1800 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="north_end_wall_floor_0_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>2.2000 0.1800 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.86 0.86 0.88 1</ambient>
+            
+            
+            <diffuse>0.86 0.86 0.88 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="floor_0_room_0_corridor_wall_lower">
+        
+        
+        <pose>-1.1900 11.5650 1.2250 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="floor_0_room_0_corridor_wall_lower_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.1800 7.4300 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="floor_0_room_0_corridor_wall_lower_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.1800 7.4300 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.86 0.86 0.88 1</ambient>
+            
+            
+            <diffuse>0.86 0.86 0.88 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="floor_0_room_0_corridor_wall_upper">
+        
+        
+        <pose>-1.1900 20.1950 1.2250 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="floor_0_room_0_corridor_wall_upper_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.1800 7.4300 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="floor_0_room_0_corridor_wall_upper_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.1800 7.4300 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.86 0.86 0.88 1</ambient>
+            
+            
+            <diffuse>0.86 0.86 0.88 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="floor_0_room_0_west_wall">
+        
+        
+        <pose>-8.4100 15.8800 1.2250 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="floor_0_room_0_west_wall_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.1800 16.0600 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="floor_0_room_0_west_wall_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.1800 16.0600 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.86 0.86 0.88 1</ambient>
+            
+            
+            <diffuse>0.86 0.86 0.88 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="floor_0_room_0_south_wall">
+        
+        
+        <pose>-4.8000 7.9400 1.2250 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="floor_0_room_0_south_wall_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>7.4000 0.1800 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="floor_0_room_0_south_wall_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>7.4000 0.1800 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.86 0.86 0.88 1</ambient>
+            
+            
+            <diffuse>0.86 0.86 0.88 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="floor_0_room_0_north_wall">
+        
+        
+        <pose>-4.8000 23.8200 1.2250 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="floor_0_room_0_north_wall_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>7.4000 0.1800 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="floor_0_room_0_north_wall_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>7.4000 0.1800 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.86 0.86 0.88 1</ambient>
+            
+            
+            <diffuse>0.86 0.86 0.88 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="stair_core_floor_0_west">
+        
+        
+        <pose>-4.7600 3.8500 1.2250 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="stair_core_floor_0_west_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.1800 6.0000 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="stair_core_floor_0_west_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.1800 6.0000 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.86 0.86 0.88 1</ambient>
+            
+            
+            <diffuse>0.86 0.86 0.88 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="stair_core_floor_0_south">
+        
+        
+        <pose>-3.2500 0.9400 1.2250 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="stair_core_floor_0_south_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>3.2000 0.1800 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="stair_core_floor_0_south_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>3.2000 0.1800 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.86 0.86 0.88 1</ambient>
+            
+            
+            <diffuse>0.86 0.86 0.88 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="stair_core_floor_0_north">
+        
+        
+        <pose>-3.2500 6.7600 1.2250 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="stair_core_floor_0_north_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>3.2000 0.1800 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="stair_core_floor_0_north_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>3.2000 0.1800 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.86 0.86 0.88 1</ambient>
+            
+            
+            <diffuse>0.86 0.86 0.88 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="elevator_core_floor_0_west_lower">
+        
+        
+        <pose>1.7400 1.6150 1.2250 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="elevator_core_floor_0_west_lower_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.1800 0.7300 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="elevator_core_floor_0_west_lower_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.1800 0.7300 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.86 0.86 0.88 1</ambient>
+            
+            
+            <diffuse>0.86 0.86 0.88 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="elevator_core_floor_0_west_upper">
+        
+        
+        <pose>1.7400 3.5850 1.2250 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="elevator_core_floor_0_west_upper_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.1800 0.7300 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="elevator_core_floor_0_west_upper_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.1800 0.7300 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.86 0.86 0.88 1</ambient>
+            
+            
+            <diffuse>0.86 0.86 0.88 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="elevator_core_floor_0_east">
+        
+        
+        <pose>3.9600 2.6000 1.2250 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="elevator_core_floor_0_east_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.1800 2.7000 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="elevator_core_floor_0_east_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.1800 2.7000 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.86 0.86 0.88 1</ambient>
+            
+            
+            <diffuse>0.86 0.86 0.88 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="elevator_core_floor_0_south">
+        
+        
+        <pose>2.8500 1.3400 1.2250 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="elevator_core_floor_0_south_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>2.4000 0.1800 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="elevator_core_floor_0_south_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>2.4000 0.1800 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.86 0.86 0.88 1</ambient>
+            
+            
+            <diffuse>0.86 0.86 0.88 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="elevator_core_floor_0_north">
+        
+        
+        <pose>2.8500 3.8600 1.2250 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="elevator_core_floor_0_north_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>2.4000 0.1800 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="elevator_core_floor_0_north_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>2.4000 0.1800 2.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.86 0.86 0.88 1</ambient>
+            
+            
+            <diffuse>0.86 0.86 0.88 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="elevator_threshold_floor_0">
+        
+        
+        <pose>1.5400 2.6000 0.0300 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="elevator_threshold_floor_0_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.2200 1.5000 0.0600</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="elevator_threshold_floor_0_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.2200 1.5000 0.0600</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.50 0.51 0.54 1</ambient>
+            
+            
+            <diffuse>0.50 0.51 0.54 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="elevator_sill_infill_floor_0">
+        
+        
+        <pose>1.6750 2.6000 -0.1100 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="elevator_sill_infill_floor_0_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.0500 2.5200 0.2200</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="elevator_sill_infill_floor_0_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.0500 2.5200 0.2200</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.72 0.72 0.73 1</ambient>
+            
+            
+            <diffuse>0.72 0.72 0.73 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="elevator_header_floor_0">
+        
+        
+        <pose>1.5900 2.6000 2.2600 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="elevator_header_floor_0_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.1200 1.6000 0.2800</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="elevator_header_floor_0_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.1200 1.6000 0.2800</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.50 0.51 0.54 1</ambient>
+            
+            
+            <diffuse>0.50 0.51 0.54 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="elevator_jamb_left_floor_0">
+        
+        
+        <pose>1.5900 1.8500 1.1000 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="elevator_jamb_left_floor_0_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.1200 0.1000 2.2000</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="elevator_jamb_left_floor_0_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.1200 0.1000 2.2000</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.50 0.51 0.54 1</ambient>
+            
+            
+            <diffuse>0.50 0.51 0.54 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="elevator_jamb_right_floor_0">
+        
+        
+        <pose>1.5900 3.3500 1.1000 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="elevator_jamb_right_floor_0_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.1200 0.1000 2.2000</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="elevator_jamb_right_floor_0_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.1200 0.1000 2.2000</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.50 0.51 0.54 1</ambient>
+            
+            
+            <diffuse>0.50 0.51 0.54 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="elevator_call_panel_floor_0">
+        
+        
+        <pose>1.5700 3.5800 1.2000 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="elevator_call_panel_floor_0_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.0800 0.2200 0.3200</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="elevator_call_panel_floor_0_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.0800 0.2200 0.3200</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.20 0.20 0.24 1</ambient>
+            
+            
+            <diffuse>0.20 0.20 0.24 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="floor_0_room_0_desk">
+        
+        
+        <pose>-6.2500 19.4450 0.4500 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="floor_0_room_0_desk_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>1.5000 0.7000 0.7500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="floor_0_room_0_desk_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>1.5000 0.7000 0.7500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.54 0.43 0.34 1</ambient>
+            
+            
+            <diffuse>0.54 0.43 0.34 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="floor_0_room_0_chair">
+        
+        
+        <pose>-6.2500 18.5450 0.2800 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="floor_0_room_0_chair_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.5500 0.5500 0.5500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="floor_0_room_0_chair_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.5500 0.5500 0.5500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.30 0.30 0.34 1</ambient>
+            
+            
+            <diffuse>0.30 0.30 0.34 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="floor_0_room_0_cabinet">
+        
+        
+        <pose>-3.3500 12.3150 0.9000 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="floor_0_room_0_cabinet_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.6000 1.0000 1.8000</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="floor_0_room_0_cabinet_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.6000 1.0000 1.8000</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.72 0.72 0.74 1</ambient>
+            
+            
+            <diffuse>0.72 0.72 0.74 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="floor_0_room_0_side_table">
+        
+        
+        <pose>-3.3500 19.4450 0.3200 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="floor_0_room_0_side_table_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.7000 0.7000 0.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="floor_0_room_0_side_table_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.7000 0.7000 0.4500</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.52 0.42 0.33 1</ambient>
+            
+            
+            <diffuse>0.52 0.42 0.33 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="floor_0_room_0_planter">
+        
+        
+        <pose>-4.8000 12.3150 0.4500 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="floor_0_room_0_planter_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.4500 0.4500 0.9000</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="floor_0_room_0_planter_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.4500 0.4500 0.9000</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.28 0.46 0.30 1</ambient>
+            
+            
+            <diffuse>0.28 0.46 0.30 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="stair_floor_landing_floor_0">
+        
+        
+        <pose>-3.2500 1.5500 -0.0900 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="stair_floor_landing_floor_0_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>3.0200 1.0000 0.1800</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="stair_floor_landing_floor_0_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>3.0200 1.0000 0.1800</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.68 0.68 0.70 1</ambient>
+            
+            
+            <diffuse>0.68 0.68 0.70 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+      
+      <link name="roof">
+        
+        
+        <pose>0.0000 12.0000 2.5600 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="roof_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>18.0000 24.0000 0.2200</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="roof_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>18.0000 24.0000 0.2200</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.72 0.74 0.76 1</ambient>
+            
+            
+            <diffuse>0.72 0.74 0.76 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <gravity>false</gravity>
+        
+      
+      </link>
+      
+    
+    </model>
+    
+    
+    <model name="dynamic_main_entrance">
+      
+      
+      <static>false</static>
+      
+      
+      <pose>0.0000 0.0000 1.2000 0.0000 0.0000 1.5708</pose>
+      
+      
+      <link name="left_panel">
+        
+        
+        <gravity>false</gravity>
+        
+        
+        <kinematic>true</kinematic>
+        
+        
+        <pose>0.0000 -0.5000 0.0000 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="left_panel_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.0600 1.0000 2.4000</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="left_panel_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.0600 1.0000 2.4000</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.18 0.18 0.20 1</ambient>
+            
+            
+            <diffuse>0.18 0.18 0.20 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+      
+      </link>
+      
+      
+      <link name="right_panel">
+        
+        
+        <gravity>false</gravity>
+        
+        
+        <kinematic>true</kinematic>
+        
+        
+        <pose>0.0000 0.5000 0.0000 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="right_panel_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.0600 1.0000 2.4000</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="right_panel_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.0600 1.0000 2.4000</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.18 0.18 0.20 1</ambient>
+            
+            
+            <diffuse>0.18 0.18 0.20 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+      
+      </link>
+      
+    
+    </model>
+    
+    
+    <model name="dynamic_elevator_floor_0">
+      
+      
+      <static>false</static>
+      
+      
+      <pose>1.6500 2.6000 1.2000 0.0000 0.0000 3.1416</pose>
+      
+      
+      <link name="left_panel">
+        
+        
+        <gravity>false</gravity>
+        
+        
+        <kinematic>true</kinematic>
+        
+        
+        <pose>0.0000 -0.3500 0.0000 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="left_panel_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.0600 0.7000 2.2000</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="left_panel_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.0600 0.7000 2.2000</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.18 0.18 0.20 1</ambient>
+            
+            
+            <diffuse>0.18 0.18 0.20 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+      
+      </link>
+      
+      
+      <link name="right_panel">
+        
+        
+        <gravity>false</gravity>
+        
+        
+        <kinematic>true</kinematic>
+        
+        
+        <pose>0.0000 0.3500 0.0000 0.0000 0.0000 0.0000</pose>
+        
+        
+        <collision name="right_panel_collision">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.0600 0.7000 2.2000</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="right_panel_visual">
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.0600 0.7000 2.2000</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.18 0.18 0.20 1</ambient>
+            
+            
+            <diffuse>0.18 0.18 0.20 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+      
+      </link>
+      
+    
+    </model>
+    
+    
+    <model name="dynamic_elevator_main">
+      
+      
+      <static>false</static>
+      
+      
+      <pose>2.7600 2.6000 1.0300 0.0000 0.0000 -1.5708</pose>
+      
+      
+      <link name="car">
+        
+        
+        <gravity>false</gravity>
+        
+        
+        <kinematic>true</kinematic>
+        
+        
+        <pose>0 0 0 0 0 0</pose>
+        
+        
+        <collision name="car_floor_collision">
+          
+          
+          <pose>0.0000 0.0000 -1.0900 0.0000 0.0000 0.0000</pose>
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>1.9000 2.1000 0.1200</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="car_floor_visual">
+          
+          
+          <pose>0.0000 0.0000 -1.0900 0.0000 0.0000 0.0000</pose>
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>1.9000 2.1000 0.1200</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.32 0.32 0.35 1</ambient>
+            
+            
+            <diffuse>0.32 0.32 0.35 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <collision name="back_collision">
+          
+          
+          <pose>0.0000 1.0100 0.0000 0.0000 0.0000 0.0000</pose>
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>1.9000 0.0800 2.3000</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="back_visual">
+          
+          
+          <pose>0.0000 1.0100 0.0000 0.0000 0.0000 0.0000</pose>
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>1.9000 0.0800 2.3000</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.55 0.56 0.58 1</ambient>
+            
+            
+            <diffuse>0.55 0.56 0.58 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <collision name="left_collision">
+          
+          
+          <pose>-0.9100 0.0000 0.0000 0.0000 0.0000 0.0000</pose>
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.0800 2.1000 2.3000</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="left_visual">
+          
+          
+          <pose>-0.9100 0.0000 0.0000 0.0000 0.0000 0.0000</pose>
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.0800 2.1000 2.3000</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.55 0.56 0.58 1</ambient>
+            
+            
+            <diffuse>0.55 0.56 0.58 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <collision name="right_collision">
+          
+          
+          <pose>0.9100 0.0000 0.0000 0.0000 0.0000 0.0000</pose>
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.0800 2.1000 2.3000</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="right_visual">
+          
+          
+          <pose>0.9100 0.0000 0.0000 0.0000 0.0000 0.0000</pose>
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>0.0800 2.1000 2.3000</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.55 0.56 0.58 1</ambient>
+            
+            
+            <diffuse>0.55 0.56 0.58 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+        
+        <collision name="top_collision">
+          
+          
+          <pose>0.0000 0.0000 1.1200 0.0000 0.0000 0.0000</pose>
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>1.9000 2.1000 0.0600</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+        
+        </collision>
+        
+        
+        <visual name="top_visual">
+          
+          
+          <pose>0.0000 0.0000 1.1200 0.0000 0.0000 0.0000</pose>
+          
+          
+          <geometry>
+            
+            
+            <box>
+              
+              
+              <size>1.9000 2.1000 0.0600</size>
+              
+            
+            </box>
+            
+          
+          </geometry>
+          
+          
+          <material>
+            
+            
+            <ambient>0.55 0.56 0.58 1</ambient>
+            
+            
+            <diffuse>0.55 0.56 0.58 1</diffuse>
+            
+          
+          </material>
+          
+        
+        </visual>
+        
+      
+      </link>
+      
+    
+    </model>
+    
+  
+  </world>
+  
+
+</sdf>

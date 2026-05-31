@@ -1,0 +1,28 @@
+<launch>
+    <!--
+        探索控制器启动文件
+        用于启动自主探索和危险源检测系统
+
+        使用方法：
+        1. 先启动SimEnv环境: ./auto.sh
+        2. 切换控制器到RL模式: 按2站立，按6进入RL模式
+        3. 再启动本launch: roslaunch exploration_controller exploration.launch
+    -->
+
+    <!-- 加载参数文件 -->
+    <rosparam file="$(find exploration_controller)/config/default.yaml" command="load" />
+
+    <!-- 启动探索节点 - 控制机器人沿墙行走 -->
+    <node name="exploration_node" pkg="exploration_controller" type="exploration_node.py"
+          output="screen" required="false">
+        <!-- 参数已通过yaml文件加载 -->
+    </node>
+
+    <!-- 启动危险源检测节点 - 检测红色球体并输出结果 -->
+    <node name="danger_detection_node" pkg="exploration_controller" type="danger_detection.py"
+          output="screen" required="false">
+        <!-- 参数已通过yaml文件加载 -->
+    </node>
+
+    <rosinfo message="探索控制器已启动！按2站立，按6进入RL模式后开始自主探索..." />
+</launch>

@@ -1,0 +1,25 @@
+{
+  "schema": "competition_danger_truth_v1",
+  "seed": 38969332,
+  "building": {
+    "model_name": "generated_building",
+    "floor_count": 1,
+    "floor_heights": [
+      0.0
+    ],
+    "footprint": {
+      "width": 18.0,
+      "length": 24.0
+    }
+  },
+  "source_rules": {
+    "danger": "red sphere",
+    "distractors": [
+      "red box",
+      "green sphere"
+    ],
+    "placement": "room interior only; avoids walls, furniture, source overlap, and room door keep-out areas"
+  },
+  "danger_sources": [],
+  "distraction_sources": []
+}

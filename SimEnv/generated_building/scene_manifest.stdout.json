@@ -1,0 +1,27 @@
+{
+  "building_config": "/home/xiaohei/\u63ed\u699c\u6302\u5e05/SimEnv/generated_building/building_config.json",
+  "competition_interfaces": {
+    "odometry_topic": "/Odometry_gazebo",
+    "team_detection_file": "/home/xiaohei/\u63ed\u699c\u6302\u5e05/SimEnv/results/detected_danger.json",
+    "truth_file_for_referee": "/home/xiaohei/\u63ed\u699c\u6302\u5e05/SimEnv/results/danger_truth.json",
+    "velocity_command_topic": "/cmd_vel"
+  },
+  "danger_count": 0,
+  "distractor_count": 0,
+  "door_config": "/home/xiaohei/\u63ed\u699c\u6302\u5e05/SimEnv/generated_building/door_config.yaml",
+  "elevator_config": "/home/xiaohei/\u63ed\u699c\u6302\u5e05/SimEnv/generated_building/elevator_config.yaml",
+  "layout_metadata": "/home/xiaohei/\u63ed\u699c\u6302\u5e05/SimEnv/generated_building/layout_metadata.json",
+  "output_truth_file": "/home/xiaohei/\u63ed\u699c\u6302\u5e05/SimEnv/generated_building/danger_truth.json",
+  "robot_start": {
+    "x": 0.0,
+    "y": -2.2,
+    "yaw": 1.5708,
+    "z": 0.6
+  },
+  "schema": "competition_scene_manifest_v1",
+  "seed": 38969332,
+  "source_count": 0,
+  "truth_file": "/home/xiaohei/\u63ed\u699c\u6302\u5e05/SimEnv/results/danger_truth.json",
+  "validation_report": "/home/xiaohei/\u63ed\u699c\u6302\u5e05/SimEnv/generated_building/generation_checks.json",
+  "world_file": "/home/xiaohei/\u63ed\u699c\u6302\u5e05/SimEnv/generated_building/competition_scene.world"
+}

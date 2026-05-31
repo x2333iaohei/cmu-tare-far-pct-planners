@@ -1,6 +1,8 @@
 # ROS/catkin build outputs
 build/
+build.*/
 devel/
+devel.*/
 install/
 log/
 logs/

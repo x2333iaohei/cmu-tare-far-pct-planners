@@ -1,0 +1,507 @@
+{
+  "checks": [
+    {
+      "actual": true,
+      "expected": true,
+      "name": "elevator_main_config_present",
+      "status": "pass"
+    },
+    {
+      "actual": [
+        2.7600000000000002,
+        2.6,
+        1.0299999999999998,
+        0.0,
+        0.0,
+        -1.5707963267948966
+      ],
+      "expected": [
+        2.7600000000000002,
+        2.6,
+        1.0299999999999998,
+        0.0,
+        0.0,
+        -1.5707963267948966
+      ],
+      "name": "elevator_main_floor_0_pose",
+      "status": "pass"
+    },
+    {
+      "actual": -1.1102230246251565e-16,
+      "expected": 0.0,
+      "name": "elevator_main_floor_0_floor_alignment",
+      "status": "pass"
+    },
+    {
+      "actual": 0.06000000000000005,
+      "expected": 0.06,
+      "name": "elevator_main_floor_0_door_gap",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "elevator_main_world_model_present",
+      "status": "pass"
+    },
+    {
+      "actual": [
+        2.76,
+        2.6,
+        1.03,
+        0.0,
+        0.0,
+        -1.5708
+      ],
+      "expected": [
+        2.7600000000000002,
+        2.6,
+        1.0299999999999998,
+        0.0,
+        0.0,
+        -1.5707963267948966
+      ],
+      "name": "elevator_main_world_initial_pose",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "generated_building_present",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "elevator_sill_infill_floor_0_present",
+      "status": "pass"
+    },
+    {
+      "actual": 0.0,
+      "expected": 0.0,
+      "name": "elevator_sill_infill_floor_0_top_alignment",
+      "status": "pass"
+    },
+    {
+      "actual": 1.6500000000000001,
+      "expected": 1.6500000000000001,
+      "name": "elevator_sill_infill_floor_0_starts_at_door_plane",
+      "status": "pass"
+    },
+    {
+      "actual": 0.05,
+      "expected": {
+        "max": 0.06,
+        "min": 0.03
+      },
+      "name": "elevator_sill_infill_floor_0_depth_within_gap",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "elevator_floor_0_config_present",
+      "status": "pass"
+    },
+    {
+      "actual": {
+        "left_open": true,
+        "right_open": true
+      },
+      "expected": true,
+      "name": "elevator_floor_0_open_panel_poses_present",
+      "status": "pass"
+    },
+    {
+      "actual": {
+        "left_open_y": -1.1999999999999997,
+        "right_open_y": 1.1999999999999997
+      },
+      "expected": {
+        "minimum_offset": 1.0499999999999998
+      },
+      "name": "elevator_floor_0_open_panels_clear_doorway",
+      "status": "pass"
+    },
+    {
+      "actual": {
+        "left_open_x": -0.12,
+        "right_open_x": -0.12
+      },
+      "expected": {
+        "negative_x": true
+      },
+      "name": "elevator_floor_0_open_panels_recessed",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "main_entrance_dynamic_model_present",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "main_entrance_door_config_present",
+      "status": "pass"
+    },
+    {
+      "actual": {
+        "left_panel": true,
+        "right_panel": true
+      },
+      "expected": {
+        "left_panel": true,
+        "right_panel": true
+      },
+      "name": "main_entrance_door_panels_present",
+      "status": "pass"
+    },
+    {
+      "actual": [
+        "left_closed",
+        "left_open",
+        "right_closed",
+        "right_open"
+      ],
+      "expected": [
+        "left_closed",
+        "left_open",
+        "right_closed",
+        "right_open"
+      ],
+      "name": "main_entrance_door_pose_keys_complete",
+      "status": "pass"
+    },
+    {
+      "actual": {
+        "closed": [
+          0.0,
+          -0.5,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "open": [
+          0.0,
+          -1.06,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "expected": {
+        "different_from_closed": true
+      },
+      "name": "main_entrance_left_panel_moves_when_open",
+      "status": "pass"
+    },
+    {
+      "actual": {
+        "closed": [
+          0.0,
+          0.5,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "open": [
+          0.0,
+          1.06,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "expected": {
+        "different_from_closed": true
+      },
+      "name": "main_entrance_right_panel_moves_when_open",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "elevator_floor_0_dynamic_model_present",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "elevator_floor_0_door_config_present",
+      "status": "pass"
+    },
+    {
+      "actual": {
+        "left_panel": true,
+        "right_panel": true
+      },
+      "expected": {
+        "left_panel": true,
+        "right_panel": true
+      },
+      "name": "elevator_floor_0_door_panels_present",
+      "status": "pass"
+    },
+    {
+      "actual": [
+        "left_closed",
+        "left_open",
+        "right_closed",
+        "right_open"
+      ],
+      "expected": [
+        "left_closed",
+        "left_open",
+        "right_closed",
+        "right_open"
+      ],
+      "name": "elevator_floor_0_door_pose_keys_complete",
+      "status": "pass"
+    },
+    {
+      "actual": {
+        "closed": [
+          0.0,
+          -0.35,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "open": [
+          -0.12,
+          -1.1999999999999997,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "expected": {
+        "different_from_closed": true
+      },
+      "name": "elevator_floor_0_left_panel_moves_when_open",
+      "status": "pass"
+    },
+    {
+      "actual": {
+        "closed": [
+          0.0,
+          0.35,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "open": [
+          -0.12,
+          1.1999999999999997,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "expected": {
+        "different_from_closed": true
+      },
+      "name": "elevator_floor_0_right_panel_moves_when_open",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "stair_floor_landing_floor_0_present",
+      "status": "pass"
+    },
+    {
+      "actual": 0.0,
+      "expected": 0.0,
+      "name": "stair_floor_landing_floor_0_top_alignment",
+      "status": "pass"
+    },
+    {
+      "actual": -1.74,
+      "expected": -1.7400000000000002,
+      "name": "stair_floor_landing_floor_0_reaches_opening_edge",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "stair_edge_infill_floor_0_present",
+      "status": "pass"
+    },
+    {
+      "actual": 0.0,
+      "expected": 0.0,
+      "name": "stair_edge_infill_floor_0_top_alignment",
+      "status": "pass"
+    },
+    {
+      "actual": -1.65,
+      "expected": -1.6500000000000001,
+      "name": "stair_edge_infill_floor_0_at_stair_open_edge",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "elevator_sill_infill_floor_0_present",
+      "status": "pass"
+    },
+    {
+      "actual": 2.52,
+      "expected": 2.52,
+      "name": "elevator_sill_infill_floor_0_full_inner_width",
+      "status": "pass"
+    },
+    {
+      "actual": 0.0,
+      "expected": 0.0,
+      "name": "elevator_sill_infill_floor_0_top_alignment",
+      "status": "pass"
+    },
+    {
+      "actual": 1,
+      "expected": {
+        ">": 0
+      },
+      "name": "floor_0_room_count_positive",
+      "status": "pass"
+    },
+    {
+      "actual": {
+        "length": 16.06,
+        "width": 7.4
+      },
+      "expected": {
+        "length": ">0",
+        "width": ">0"
+      },
+      "name": "floor_0_room_0_bounds_positive",
+      "status": "pass"
+    },
+    {
+      "actual": {
+        "x_max": -1.1,
+        "x_min": -8.5,
+        "y_max": 23.91,
+        "y_min": 7.8500000000000005
+      },
+      "expected": {
+        "x_max<=": 9.0,
+        "x_min>=": -9.0,
+        "y_max<=": 23.91,
+        "y_min>=": 7.8500000000000005
+      },
+      "name": "floor_0_room_0_within_room_band",
+      "status": "pass"
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "name": "floor_0_room_0_clears_stair_core",
+      "status": "pass"
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "name": "floor_0_room_0_clears_elevator_core",
+      "status": "pass"
+    },
+    {
+      "actual": [
+        -1.1,
+        15.88,
+        1.2,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected": [
+        -1.1,
+        15.88,
+        1.2,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "floor_0_room_0_door_pose_valid",
+      "status": "pass"
+    },
+    {
+      "actual": [
+        -4.3,
+        15.88,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected": {
+        "inside_room": true,
+        "z": 0.0
+      },
+      "name": "floor_0_room_0_goal_pose_inside_room",
+      "status": "pass"
+    },
+    {
+      "actual": {
+        "floor_0_room_0_cabinet": {
+          "x_max": -3.05,
+          "x_min": -3.6499999999999995,
+          "y_max": 12.815000000000001,
+          "y_min": 11.815000000000001
+        },
+        "floor_0_room_0_chair": {
+          "x_max": -5.975,
+          "x_min": -6.525,
+          "y_max": 18.82,
+          "y_min": 18.270000000000003
+        },
+        "floor_0_room_0_desk": {
+          "x_max": -5.5,
+          "x_min": -7.0,
+          "y_max": 19.795,
+          "y_min": 19.095
+        },
+        "floor_0_room_0_planter": {
+          "x_max": -4.575,
+          "x_min": -5.0249999999999995,
+          "y_max": 12.540000000000001,
+          "y_min": 12.090000000000002
+        },
+        "floor_0_room_0_side_table": {
+          "x_max": -2.9999999999999996,
+          "x_min": -3.6999999999999997,
+          "y_max": 19.795,
+          "y_min": 19.095
+        }
+      },
+      "expected": {
+        "all_inside_room": true
+      },
+      "name": "floor_0_room_0_furniture_within_room",
+      "status": "pass"
+    },
+    {
+      "actual": [],
+      "expected": [],
+      "name": "floor_0_rooms_do_not_overlap",
+      "status": "pass"
+    }
+  ],
+  "signature": "86fe94aa22828a5a",
+  "status": "pass",
+  "summary": {
+    "failed": 0,
+    "passed": 45
+  }
+}

@@ -1,0 +1,29 @@
+# 打开主入口门
+rosservice call /set_door_state "{door_id: 'main_entrance', open: true}"
+
+# 关闭主入口门
+rosservice call /set_door_state "{door_id: 'main_entrance', open: false}"
+
+# 打开 1 楼电梯厅门
+rosservice call /set_door_state "{door_id: 'elevator_floor_0', open: true}"
+
+# 关闭 1 楼电梯厅门
+rosservice call /set_door_state "{door_id: 'elevator_floor_0', open: false}"
+
+# 呼叫电梯到 1 楼，保持门关闭
+rosservice call /call_elevator "{elevator_id: 'elevator_main', target_floor: 0, open_doors: false}"
+
+# 打开 1 楼电梯厅门，机器人进入轿厢
+rosservice call /set_door_state "{door_id: 'elevator_floor_0', open: true}"
+
+# 关闭 1 楼电梯厅门
+rosservice call /set_door_state "{door_id: 'elevator_floor_0', open: false}"
+
+# 电梯上行到 2 楼
+rosservice call /call_elevator "{elevator_id: 'elevator_main', target_floor: 1, open_doors: false}"
+
+# 打开 2 楼电梯厅门，机器人离开轿厢
+rosservice call /set_door_state "{door_id: 'elevator_floor_1', open: true}"
+
+# 电梯下行回 1 楼
+rosservice call /call_elevator "{elevator_id: 'elevator_main', target_floor: 0, open_doors: false}"
