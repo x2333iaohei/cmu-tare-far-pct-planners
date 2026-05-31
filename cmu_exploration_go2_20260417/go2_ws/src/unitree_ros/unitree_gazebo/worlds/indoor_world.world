@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="default">
+    <!-- 光照 -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- 室内模型 -->
+    <model name="indoor">
+      <static>true</static>
+      <pose>0 0 0 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>model://indoor/meshes/indoor.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>model://indoor/meshes/indoor.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf> 

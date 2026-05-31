@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="default">
+    <!-- 必选：添加光照（否则Gazebo启动后画面黑屏/异常） -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    
+    <!-- 必选：添加地面平面（基础物理环境） -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    
+    <!-- 可选：启用基本物理引擎（Gazebo 11 默认是ODE） -->
+    <physics name="default_physics" type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    
+    <!-- 可选：启用GUI和日志（便于调试） -->
+    <gui fullscreen="0"/>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+  </world>
+</sdf>

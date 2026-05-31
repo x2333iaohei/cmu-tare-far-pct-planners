@@ -1,0 +1,87 @@
+<launch>
+
+  <!-- ======================== 地形分析节点（terrainAnalysis） ======================== -->
+  <!-- 功能：将激光雷达点云处理成地形高度图（每个栅格存储地面高度）并检测动态/静态障碍物 -->
+  <node pkg="terrain_analysis" type="terrainAnalysis" name="terrainAnalysis" output="screen" required="true">
+    
+    <!-- 输入点云的体素滤波尺寸（米）：对原始扫描点云进行降采样，减小计算量 -->
+    <param name="scanVoxelSize" type="double" value="0.05" />
+    
+    <!-- 栅格单元中数据的衰减时间（秒）：超过此时间未更新的栅格，其高度信息权重降低 -->
+    <param name="decayTime" type="double" value="2.0" />
+    
+    <!-- 无衰减距离（米）：在此距离内的栅格不应用时间衰减，保持最新数据 -->
+    <param name="noDecayDis" type="double" value="4.0" />
+    
+    <!-- 清除距离（米）：超过此距离的栅格将完全清除（不再保留任何数据） -->
+    <param name="clearingDis" type="double" value="8.0" />
+    
+    <!-- 是否对每个栅格内的点云按高度排序（用于分位数计算地面高度） -->
+    <param name="useSorting" type="bool" value="false" />
+    
+    <!-- 分位数 Z 值（0~1）：当 useSorting=true 时，取此分位数作为地面高度估计（例如 0.25 表示取最低 25% 高度的中值） -->
+    <param name="quantileZ" type="double" value="0.25" />
+    
+    <!-- 是否考虑点云向下掉落（例如悬崖边缘），若为 true 则对突然的高度下降做特殊标记 -->
+    <param name="considerDrop" type="bool" value="true" />
+    
+    <!-- 是否限制地面抬升速率（防止将移动物体误判为地面高度变化） -->
+    <param name="limitGroundLift" type="bool" value="false" />
+    
+    <!-- 最大地面抬升量（米）：当 limitGroundLift=true 时，前后两帧间地面高度变化不能超过此值 -->
+    <param name="maxGroundLift" type="double" value="0.15" />
+    
+    <!-- 是否清除动态障碍物（将动态物体从地形栅格中移除，避免影响地面重建） -->
+    <param name="clearDyObs" type="bool" value="true" />
+    
+    <!-- 动态障碍物最小距离（米）：距离小于此值的动态点不被清除，以防误删近处的地面点 -->
+    <param name="minDyObsDis" type="double" value="0.3" />
+    
+    <!-- 动态障碍物最小角度（度）：水平角小于此值的动态点不被清除（留作传感器盲区补偿） -->
+    <param name="minDyObsAngle" type="double" value="0" />
+    
+    <!-- 动态障碍物相对高度下限（米）：低于车辆此相对高度的点不被视为动态障碍物 -->
+    <param name="minDyObsRelZ" type="double" value="-0.5" />
+    
+    <!-- 动态障碍物绝对相对高度阈值（米）：若点相对高度的绝对值小于此值，则认为是地面点，不是动态障碍物 -->
+    <param name="absDyObsRelZThre" type="double" value="0.2" />
+    
+    <!-- 动态障碍物垂直视场角下限（度）：只处理激光雷达垂直角度在此范围内的点，用于过滤地面附近的噪点 -->
+    <param name="minDyObsVFOV" type="double" value="-16.0" />
+    
+    <!-- 动态障碍物垂直视场角上限（度） -->
+    <param name="maxDyObsVFOV" type="double" value="16.0" />
+    
+    <!-- 单个动态障碍物区域所需的最小点云数量，少于该值不视为有效动态障碍物 -->
+    <param name="minDyObsPointNum" type="int" value="1" />
+    
+    <!-- 是否将无数据区域（如激光未扫描到的区域）视为障碍物（可用于地图边界或未知区域探测） -->
+    <param name="noDataObstacle" type="bool" value="false" />
+    
+    <!-- 无数据区块的跳帧数量：每隔多少帧才重新评估无数据区域，减少重复计算 -->
+    <param name="noDataBlockSkipNum" type="int" value="0" />
+    
+    <!-- 最小区块点数阈值：一个无数据区块被认定为障碍物所需的最少邻居点数量 -->
+    <param name="minBlockPointNum" type="int" value="10" />
+    
+    <!-- 车辆高度（米）：用于判断点云是否高于车顶，高于此高度的点忽略（如树枝、天桥） -->
+    <param name="vehicleHeight" type="double" value="1.5" />
+    
+    <!-- 栅格单元的点数更新阈值：当累计点数超过此值时，强制更新该栅格的地面高度 -->
+    <param name="voxelPointUpdateThre" type="int" value="100" />
+    
+    <!-- 栅格单元的时间更新阈值（秒）：超过此时间未更新，即使点数未达到阈值也强制更新 -->
+    <param name="voxelTimeUpdateThre" type="double" value="2.0" />
+    
+    <!-- 点云相对高度的下限（米）：低于此高度的点被直接忽略（例如地面以下噪声） -->
+    <param name="minRelZ" type="double" value="-2.5" />
+    
+    <!-- 点云相对高度的上限（米）：高于此高度的点被忽略（例如高空的树叶、建筑物高层） -->
+    <param name="maxRelZ" type="double" value="1.0" />
+    
+    <!-- 距离-高度比例系数：用于根据距离调整高度容差，远处点的高度噪声更大时使用 -->
+    <param name="disRatioZ" type="double" value="0.2" />
+    
+  </node>
+
+</launch>

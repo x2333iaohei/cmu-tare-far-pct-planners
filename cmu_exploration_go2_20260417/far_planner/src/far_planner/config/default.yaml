@@ -1,0 +1,133 @@
+# Dynamic Planner Default Params
+
+# 主循环运行频率 (Hz)，控制全局规划器的更新速率
+main_run_freq                           : 1.5  # 原来是2.5
+
+# 体素分辨率 (米)，决定环境建模的精细程度
+voxel_dim                               : 0.20 # Unit: meter 原来是0.15
+
+# 机器人外接圆直径 (米)，用于碰撞检测
+robot_dim                               : 0.8   # Unit: meter
+
+# 机器人本体高度 (米)，用于判断上方可通过空间
+vehicle_height                          : 0.75  # Unit: meter
+
+# 传感器有效探测距离 (米)，超出此范围的环境视为未知
+sensor_range                            : 30.0  # Unit: meter
+
+# 地形分析有效范围 (米)，在此范围内评估地面可通行性
+terrain_range                           : 15.0  # Unit: meter
+
+# 局部规划器作用范围 (米)，在此范围内生成精细的局部路径
+local_planner_range                     : 5.0   # Unit: meter
+
+# 可视化数据下采样比例 (0~1)，减小 RViz 显示负载
+visualize_ratio                         : 0.75
+
+# 是否扩展路径点到更开阔的区域，以获得更好的视野
+is_viewpoint_extend                     : true
+
+# 是否启用多层地图 (用于多层建筑物)
+is_multi_layer                          : false
+
+# 是否使用 OpenCVconver 窗口显示障碍物图像 (调试用)
+is_opencv_visual                        : false # Obstalce Image Display
+
+# 环境是否为静态 (true 时动态障碍物不会从地图中移除)
+is_static_env                           : true
+
+# 是否发布边界的可视化消息 (调试用)
+is_pub_boundary                         : true
+
+# 是否输出详细的调试信息到终端
+is_debug_output                         : true
+
+# 当已知地图无可行路径时，是否自动切换到尝试性探索模式
+is_attempt_autoswitch                   : true  # Auto switch to attemptable navigation
+
+# 全局坐标系名称，所有模块共同依赖的参考系
+world_frame                             : map
+
+# Graph Messager
+# 机器人 ID，用于区分不同的机器人 (多机器人系统中)
+GraphMsger/robot_id                     : 1  # graph from robot id "0" is extracted from files
+
+# Map Handler Params
+# 多层地图中每层的高度 (米)，超出此高度的障碍物会被忽略
+MapHandler/floor_height                 : 2.0     # Unit: meter
+
+# 宏观格网地图单元的边长 (米)
+MapHandler/cell_length                  : 5.0     # Unit: meter
+
+# 全局地图在 X/Y 方向的最大范围 (米)
+MapHandler/map_grid_max_length          : 1000.0  # Unit: meter
+
+# 全局地图在 Z 方向的最大高度范围 (米)
+MapHandler/map_grad_max_height          : 100.0   # Unit: meter
+
+# Dynamic Planner Utility Params
+# 角度噪声容忍度 (度)，用于姿态对齐时的滤波
+Util/angle_noise                        : 15.0 # Unit: degree
+
+# 路径点与当前航向之间允许的最大夹角 (度)，超过则需调整
+Util/accept_max_align_angle             : 4.0  # Unit: degree
+
+# 障碍物边缘膨胀的栅格数量，扩大安全距离
+Util/obs_inflate_size                   : 1
+
+# 新观测点被认定为有效地图点的强度阈值
+Util/new_intensity_thred                : 2.0
+
+# 地形可通行高度阈值 (米)，低于此高度的物体视为可通过
+Util/terrain_free_Z                     : 0.2
+
+# 动态障碍物更新阈值：一个区域被检测到多少次后才被确认为动态物体
+Util/dyosb_update_thred                 : 4
+
+# 动态障碍物在地图中保留的时间 (秒)，超时后移除
+Util/dynamic_obs_dacay_time             : 10.0 # Unit: second
+
+# 新观测到的障碍物在图中作为候选点的保持时间 (秒)
+Util/new_points_decay_time              : 1.0  # Unit: second
+
+# Dynamic Graph Params
+# 两个节点之间需被观测到相互可见的次数，才会在图里建立连接
+Graph/connect_votes_size                : 10 #原来是10
+
+# 候选节点被观测为无效的次数阈值，超过则从候选池中清除
+Graph/clear_dumper_thred                : 4
+
+# 一个候选节点需被稳定观测到的次数，才会升级为图中的永久节点
+Graph/node_finalize_thred               : 6 #原来是6
+
+# 候选节点池的最大容量
+Graph/filter_pool_size                  : 12
+
+# Corner Detector Params
+# 角点检测前对图像进行缩放的倍数 (用于增强特征)
+CDetector/resize_ratio                  : 3.0
+
+# 一个候选角点需被连续观测到的次数，才确认为真实角点
+CDetector/filter_count_value            : 3 #原来是3
+
+# 是否保存角点检测的可视化图像 (调试用)
+CDetector/is_save_img                   : false
+
+# 保存图像的文件夹路径 (配合 is_save_img 使用)
+CDetector/img_folder_path               : /path
+
+# Graph Planner Params
+# 机器人被认为到达某个路径点的距离容差 (米)
+GPlanner/converge_distance              : 0.5  # Unit: meter
+
+# 机器人接近全局目标时的调整半径 (米)，进入此范围即认为已到达
+GPlanner/goal_adjust_radius             : 2.0  # Unit: meter
+
+# 一个区域需被检测为自由空间多少次，才会被永久标记
+GPlanner/free_counter_thred             : 7
+
+# 确认机器人到达最终目标所需的投票次数 (避免单次误判)
+GPlanner/reach_goal_vote_size           : 3
+
+# 路径动量阈值，用于路径平滑或选择 (避免路径剧烈跳变)
+GPlanner/path_momentum_thred            : 3 #原来是3

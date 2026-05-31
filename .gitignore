@@ -1,0 +1,23 @@
+# ROS/catkin build outputs
+build/
+devel/
+install/
+log/
+logs/
+*_log.txt
+sim_log.txt
+far_log.txt
+.catkin_tools/
+
+# Python/cache outputs
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Editor/local files
+.vscode/
+*.swp
+*~
+
+# Large mesh excluded from normal GitHub upload; use Git LFS if it is required.
+cmu_exploration_go2_20260417/autonomous_exploration_development_environment/src/vehicle_simulator/mesh/campus/meshes/campus.dae
