@@ -136,9 +136,11 @@ install(DIRECTORY launch/
 install(DIRECTORY rviz/
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/rviz
         )
+install(PROGRAMS scripts/publish_overall_map.py
+        DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+        )
 
 #############
 ## Testing ##
 #############
-
 

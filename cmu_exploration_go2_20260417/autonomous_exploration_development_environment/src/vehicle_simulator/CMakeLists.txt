@@ -8,9 +8,12 @@ set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 
 ## Find catkin macros and libraries
 find_package(catkin REQUIRED COMPONENTS
+  nav_msgs
   roscpp
+  rospy
   std_msgs
   sensor_msgs
+  tf
   pcl_ros
 )
 
@@ -23,9 +26,12 @@ find_package(PCL REQUIRED)
 
 catkin_package(
   CATKIN_DEPENDS
+  nav_msgs
   roscpp
+  rospy
   std_msgs
   sensor_msgs
+  tf
   pcl_ros
 )
 
@@ -60,6 +66,12 @@ install(TARGETS vehicleSimulator
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+install(PROGRAMS
+  scripts/go2_competition_frame_bridge.py
+  scripts/go2_competition_entry_sequence.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
 install(DIRECTORY launch/

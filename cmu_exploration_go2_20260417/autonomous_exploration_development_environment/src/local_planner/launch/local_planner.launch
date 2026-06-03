@@ -29,9 +29,9 @@
     <param name="pathFolder" type="string" value="$(find local_planner)/paths" />
     
     <!-- 车辆长度（米），用于计算旋转避障时的车体轮廓 -->
-    <param name="vehicleLength" type="double" value="0.6" />
+    <param name="vehicleLength" type="double" value="0.48" />
     <!-- 车辆宽度（米） -->
-    <param name="vehicleWidth" type="double" value="0.6" />
+    <param name="vehicleWidth" type="double" value="0.34" />
     
     <!-- 传感器偏移（来自 launch 参数） -->
     <param name="sensorOffsetX" value="$(arg sensorOffsetX)" />
@@ -67,7 +67,7 @@
     <param name="useCost" type="bool" value="false" />
     
     <!-- 每条路径上允许被障碍物击中的最大点数阈值，超过此值则认为路径不可行 -->
-    <param name="pointPerPathThre" type="int" value="6" />
+    <param name="pointPerPathThre" type="int" value="18" />
     
     <!-- 点云相对高度的下限（米）：低于此高度的点被过滤（避免地面噪声干扰） -->
     <param name="minRelZ" type="double" value="-0.5" />
@@ -86,16 +86,16 @@
     <param name="dirToVehicle" type="bool" value="false" />
     
     <!-- 路径缩放系数：对预定义路径整体尺寸的乘数（>1 拉长，<1 缩短） -->
-    <param name="pathScale" type="double" value="1.35" /> <!-- 原来1.25 -->
+    <param name="pathScale" type="double" value="0.90" /> <!-- 窄通道调参v2：更短路径模板，减少贴墙入口处大弧线绕行 -->
     <!-- 最小路径缩放系数：动态缩放时的下限 -->
-    <param name="minPathScale" type="double" value="0.9" />
+    <param name="minPathScale" type="double" value="0.60" />
     <!-- 路径缩放步长：每次尝试缩小路径的减量 -->
-    <param name="pathScaleStep" type="double" value="0.35" /> <!-- 原来0.25 -->
+    <param name="pathScaleStep" type="double" value="0.20" /> <!-- 窄通道调参v2：更细的缩放步长，便于找到贴身可行路径 -->
     <!-- 是否根据当前速度动态缩放路径（速度越快，路径越长） -->
     <param name="pathScaleBySpeed" type="bool" value="true" />
     
     <!-- 最小路径范围（米）：规划器考虑的最短路径长度（即使速度很低也不小于此值） -->
-    <param name="minPathRange" type="double" value="2.5" />  <!-- 原来2.0 -->
+    <param name="minPathRange" type="double" value="0.9" />  <!-- 窄通道调参v2：允许近距离小步穿过走廊口 -->
     <!-- 路径范围步长：如果找不到可行路径，每次减小的范围长度（米） -->
     <param name="pathRangeStep" type="double" value="0.25" />
     <!-- 是否根据速度动态调整路径范围（为 false 时路径范围固定为 adjacentRange） -->
@@ -115,7 +115,7 @@
     <param name="joyToCheckObstacleDelay" type="double" value="5.0" />
     
     <!-- 目标点清除范围（米）：当车辆距离目标点小于此值时，认为已到达，可清除路径终点限制 -->
-    <param name="goalClearRange" type="double" value="1.0" />
+    <param name="goalClearRange" type="double" value="0.35" />
     
     <!-- 固定目标点坐标 -->
     <param name="goalX" type="double" value="$(arg goalX)" />
@@ -136,7 +136,7 @@
     <param name="twoWayDrive" value="$(arg twoWayDrive)" />
     
     <!-- 前视距离（米）：控制器预瞄路径上距离车辆前方多远的目标点 -->
-    <param name="lookAheadDis" type="double" value="0.8" />
+    <param name="lookAheadDis" type="double" value="0.45" />
     
     <!-- 转向增益（比例系数）：将横向偏差转换为角速度的系数，值越小转向越柔和 -->
     <param name="yawRateGain" type="double" value="1.5" />
@@ -158,7 +158,7 @@
     <!-- 停车距离阈值（米）：距离目标点小于此值时，速度降为 0 -->
     <param name="stopDisThre" type="double" value="0.1" />
     <!-- 减速距离阈值（米）：距离目标点小于此值时开始减速 -->
-    <param name="slowDwnDisThre" type="double" value="0.85" />
+    <param name="slowDwnDisThre" type="double" value="0.35" />
     
     <!-- 是否根据倾斜角速度减速（用于爬坡/下坡时自动限速） -->
     <param name="useInclRateToSlow" type="bool" value="false" />

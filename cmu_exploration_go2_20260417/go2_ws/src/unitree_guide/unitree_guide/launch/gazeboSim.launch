@@ -1,6 +1,5 @@
 <launch>
-    <arg name="wname" default="earth"/>
-    <!-- <arg name="wname" default="earth"/> -->
+    <arg name="wname" default="competition_scene"/>
     <arg name="rname" default="go2"/>
     <arg name="robot_path" value="(find $(arg rname)_description)"/>
     <arg name="dollar" value="$"/>
@@ -12,12 +11,13 @@
     <arg name="debug" default="false"/>
     <!-- Debug mode will hung up the robot, use "true" or "false" to switch it. -->
     <arg name="user_debug" default="false"/>
+    <arg name="spawn_x" default="0.0"/>
+    <arg name="spawn_y" default="-2.1"/>
+    <arg name="spawn_z" default="0.6"/>
+    <arg name="spawn_yaw" default="1.5708"/>
     
-      <!-- 设置Gazebo模型路径 -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch"> 
-        <arg name="world_name" value="$(find unitree_gazebo)/worlds/indoor_world.world"/>  
-        <!-- <arg name="world_name" value="$(find unitree_gazebo)/worlds/test_world.world"/>   -->
-        <!-- <arg name="world_name" value="$(find unitree_gazebo)/worlds/earth.world"/>   -->
+        <arg name="world_name" value="$(find unitree_gazebo)/worlds/$(arg wname).world"/>
         <arg name="debug" value="$(arg debug)"/>  
         <arg name="gui" value="$(arg gui)"/> 
         <arg name="paused" value="$(arg paused)"/>
@@ -33,7 +33,7 @@
     <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
     <!-- Set trunk and joint positions at startup -->
     <node pkg="gazebo_ros" type="spawn_model" name="urdf_spawner" respawn="false" output="screen"
-          args="-urdf -z 0.6 -model $(arg rname)_gazebo -param robot_description -unpause"/>
+          args="-urdf -x $(arg spawn_x) -y $(arg spawn_y) -z $(arg spawn_z) -Y $(arg spawn_yaw) -model $(arg rname)_gazebo -param robot_description -unpause"/>
 
     <!-- Load joint controller configurations from YAML file to parameter server -->
     <rosparam file="$(arg dollar)$(arg robot_path)/config/robot_control.yaml" command="load"/>

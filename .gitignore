@@ -6,6 +6,11 @@ devel.*/
 install/
 log/
 logs/
+generated_building/
+results/
+CODEX_RECOVERY_STATE.md
+.codex/
+*.log
 *_log.txt
 sim_log.txt
 far_log.txt

@@ -1,0 +1,128 @@
+# ==================== 订阅与发布的话题 ====================
+sub_start_exploration_topic_ : /start_exploration      # 启动探索模式的话题，收到消息后开始自主导航
+sub_terrain_map_topic_ : /terrain_map                  # 地形地图（可通行区域），用于碰撞检测和路径规划
+sub_terrain_map_ext_topic_ : /terrain_map_ext          # 扩展地形地图，可能包含更精细的障碍物信息
+sub_state_estimation_topic_ : /state_estimation_at_scan # 机器人状态估计（位姿、速度），与激光扫描时刻对齐
+sub_registered_scan_topic_ : /registered_scan          # 配准后的点云，用于构建表面覆盖模型
+sub_coverage_boundary_topic_ : /sensor_coverage_planner/coverage_boundary # 已经覆盖区域的边界（可选输入）
+sub_viewpoint_boundary_topic_ : /navigation_boundary   # 导航边界，限制视点采样范围（如墙壁）
+sub_nogo_boundary_topic_ : /sensor_coverage_planner/nogo_boundary # 禁区边界，机器人不可进入
+sub_joystick_topic_ : /joy                             # 遥控器输入，用于手动干预或重置
+sub_reset_waypoint_topic_ : /reset_waypoint            # 重置当前目标点的话题
+pub_exploration_finish_topic_ : exploration_finish     # 探索完成时发布的消息
+pub_runtime_breakdown_topic_ : runtime_breakdown       # 各模块运行时间分解（调试用）
+pub_runtime_topic_ : /runtime                          # 总体运行时间（调试用）
+pub_waypoint_topic_ : /way_point                       # 当前规划出的局部目标点，供控制器跟踪
+pub_momentum_activation_count_topic_ : momentum_activation_count # 动量行为激活次数（调试/统计）
+
+# ==================== 全局行为开关与基本参数 ====================
+kAutoStart : false                                     # 比赛场景先由GO2入门序列触发，收到/start_exploration后再探索
+kRushHome : true                                       # 探索完成后是否快速返回起点
+kUseTerrainHeight : false                              # 是否使用地形高度信息（false则只用平坦性判断）
+kCheckTerrainCollision : true                          # 是否检查地形地图中的碰撞（与障碍物距离）
+kExtendWayPoint : true                                 # 是否将局部目标点向外延伸（避免机器人过于靠近墙壁）
+kUseLineOfSightLookAheadPoint : false                  # 窄通道调参v3：到门口后继续沿规划路径给通道内目标，不因LOS截断马上换目标
+kNoExplorationReturnHome : true                       # 如果没有可探索区域，是否直接返回起点 原来是true
+kExtendWayPointDistanceBig : 4.0                       # 窄通道调参v2：进一步缩短目标点外延，减少窄入口前的大幅回摆
+kExtendWayPointDistanceSmall : 1.2                     # 窄通道调参v2：接近贴身走廊时只给近距离目标
+kKeyposeCloudDwzFilterLeafSize : 0.2                   # 关键帧点云降采样滤波器的叶节点尺寸（米），减少内存
+kRushHomeDist : 5                                      # 距离起点小于此值时认为“已到家”，停止回程
+kAtHomeDistThreshold : 0.5                             # 判断是否已到达起点的距离阈值
+kTerrainCollisionThreshold : 0.22                      # 窄通道调参v2：贴身过道继续放宽地形碰撞距离
+kLookAheadDistance : 5                                 # 窄通道调参v2：前视再缩短，优先进入眼前通道而不是远处空旷区
+kUseMomentum : true                                    # 窄通道调参v3：入口处目标切换时抑制立即反向掉头
+kDirectionChangeCounterThr : 0                         # 窄通道调参v3：检测到一次反向趋势就启用动量
+kDirectionNoChangeCounterThr : 12                      # 窄通道调参v3：保持更久的前进方向，穿过入口后再释放
+kResetWaypointJoystickAxesID : 2                       # 遥控器上用于重置目标点的摇杆轴ID
+
+# ==================== 规划环境策略 ====================
+kUseFrontier : true                                    # 是否使用前沿（未知与已知区域的边界）作为探索驱动
+kFrontierClusterTolerance : 0.6                       # 前沿点聚类的距离容差（米），小于此距离视为同一簇 原来为1.0
+kFrontierClusterMinSize : 4                            # 窄通道调参v3：窄通道内前沿点少，降低簇大小门槛
+kUseCoverageBoundaryOnFrontier : false                 # 是否将覆盖边界作为前沿的一种（实验性）
+kUseCoverageBoundaryOnObjectSurface : false            # 是否将物体表面未覆盖部分作为前沿
+
+# ==================== 滚动占用网格地图 ====================
+rolling_occupancy_grid/resolution_x : 0.3              # 网格地图X方向分辨率（米）
+rolling_occupancy_grid/resolution_y : 0.3              # 网格地图Y方向分辨率（米）
+rolling_occupancy_grid/resolution_z : 0.3             # 网格地图Z方向分辨率（米）
+
+kSurfaceCloudDwzLeafSize : 0.3                         # 表面点云降采样的叶节点尺寸（米）
+kCollisionCloudDwzLeafSize : 0.2                       # 碰撞点云降采样的叶节点尺寸（米），更精细
+kKeyposeCloudStackNum : 5                              # 用于局部表面构建的历史关键帧点云数量
+kPointCloudRowNum : 50                                 # 点云管理器在水平方向的网格行数
+kPointCloudColNum : 50                                 # 点云管理器在水平方向的网格列数
+kPointCloudLevelNum : 30                               # 点云管理器在垂直方向的分层数
+kMaxCellPointNum : 100000                              # 每个点云网格单元最多存储的点数
+kPointCloudCellSize : 18                               # 点云管理器的单个网格单元尺寸（米）
+kPointCloudCellHeight : 1.8                            # 点云管理器网格单元的高度（米）
+kPointCloudManagerNeighborCellNum : 5                  # 查询邻域时扩展的相邻网格数量
+kCoverCloudZSqueezeRatio : 2.0                         # 覆盖点云在Z轴上的压缩比率（用于降维计算）
+
+# ==================== 关键帧图（Keypose Graph） ====================
+keypose_graph/kAddNodeMinDist : 1.0                    # 新增关键帧节点所需的最小移动距离（米）
+keypose_graph/kAddNonKeyposeNodeMinDist : 0.5          # 新增普通（非关键）节点所需的最小移动距离
+keypose_graph/kAddEdgeConnectDistThr : 5.0             # 添加图边时，两节点间的最大连接距离（米） 原来是3.0
+keypose_graph/kAddEdgeToLastKeyposeDistThr : 3.0       # 新节点与上一个关键帧的连接距离阈值
+keypose_graph/kAddEdgeVerticalThreshold : 1.0          # 垂直方向上认为可连接的阈值（米），用于斜坡/楼梯
+keypose_graph/kAddEdgeCollisionCheckResolution : 0.4   # 边碰撞检测的步长（米）
+keypose_graph/kAddEdgeCollisionCheckRadius : 0.2       # 窄通道调参v2：接近机器人尺寸的走廊需要更小图边碰撞半径
+keypose_graph/kAddEdgeCollisionCheckPointNumThr : 4    # 窄通道调参v2：允许少量墙面/噪点落入边检测窗口
+
+# ==================== 视点管理器（ViewPoint Manager） ====================
+viewpoint_manager/number_x : 50                        # 视点采样网格X方向数量 原来是50
+viewpoint_manager/number_y : 50                        # 视点采样网格Y方向数量 原来是50
+viewpoint_manager/number_z : 1                         # 视点采样网格Z方向数量（常为1，因为地面机器人）
+viewpoint_manager/resolution_x : 0.3                   # 视点采样网格X方向分辨率（米）原来是0.6
+viewpoint_manager/resolution_y : 0.3                   # 视点采样网格Y方向分辨率（米）原来是0.6
+viewpoint_manager/resolution_z : 0.0                   # Z方向分辨率（0表示不采样不同高度）
+kConnectivityHeightDiffThr : 0.25                      # 视点之间可连通的最大高度差（米）
+kGreedyViewPointSampleRange : 1                        # 窄通道调参v3：去掉top-k随机性，稳定选择最高分通道候选
+kLocalPathOptimizationItrMax : 10                      # 局部路径优化的最大迭代次数
+kViewPointCollisionMargin : 0.18                       # 窄通道调参v2：贴身走廊允许视点靠近墙面
+kViewPointCollisionMarginZPlus : 0.5                   # 视点上方碰撞裕度（米），避免头部碰撞
+kViewPointCollisionMarginZMinus : 0.5                  # 视点下方碰撞裕度（米），避免脚部悬空
+kCollisionGridZScale : 1.0                             # 碰撞检测网格Z轴缩放因子（用于非均匀体素）
+kCollisionGridResolutionX : 0.2                        # 碰撞检测网格X方向分辨率
+kCollisionGridResolutionY : 0.2                        # 碰撞检测网格Y方向分辨率
+kCollisionGridResolutionZ : 0.0                        # 碰撞检测网格Z方向分辨率（0表示使用全局值）
+kCollisionPointThr : 3                                 # 窄通道调参v2：降低孤立点/边缘点误封通道的概率
+kLineOfSightStopAtNearestObstacle : false              # 视线检测是否在首个障碍物处停止（false则穿透计算）
+kViewPointHeightFromTerrain : 0.75                     # 视点相对于地形地面的高度（米），即传感器安装高度
+kViewPointHeightFromTerrainChangeThreshold : 0.6       # 地形高度变化超过此值时，视点高度需要重新调整
+kCheckDynamicObstacleCollision : false                 # 是否检查动态障碍物碰撞（会增加计算量）
+kCollisionFrameCountMax : 3                            # 允许的连续碰撞帧数最大值，超过则视为真的碰撞
+
+kSensorRange : 10.0                                     # 传感器有效探测范围（米），影响覆盖计算 原来是7.5
+kNeighborRange : 3.0                                   # 视点之间“邻居”关系的最大距离（米）
+kCoverageOcclusionThr : 0.3                            # 覆盖计算中遮挡容忍度（0~1），越高越不认为被遮挡
+kCoverageDilationRadius : 0.5                          # 覆盖区域膨胀半径（米），使覆盖区更平滑
+
+# ==================== 网格世界（Grid World）状态机 ====================
+kGridWorldXNum : 121                                   # 全局网格世界X方向单元格数量
+kGridWorldYNum : 121                                   # 全局网格世界Y方向单元格数量
+kGridWorldZNum : 121                                   # 全局网格世界Z方向单元格数量（实际使用较少）
+kGridWorldCellHeight : 3.0                             # 网格世界单元格的高度（米）
+kGridWorldNearbyGridNum : 5                            # 查询周边网格时的邻居数量
+kMinAddPointNumSmall : 20                              # 将单元格标记为“已覆盖”所需的最少点数（小阈值）原来是40
+kMinAddPointNumBig : 30                                # 将单元格标记为“已覆盖”所需的最少点数（大阈值）原来是60
+kMinAddFrontierPointNum : 5                            # 窄通道调参v3：让窄通道内小前沿也能进入局部候选
+kCellExploringToCoveredThr : 1                         # “探索中”状态转为“已覆盖”的连续观测次数 原来是1
+kCellCoveredToExploringThr: 3                         # “已覆盖”状态转为“探索中”所需的未观测次数（防止快速翻转）原来是10
+kCellExploringToAlmostCoveredThr: 10                   # “探索中”转为“几乎覆盖”所需连续观测次数
+kCellAlmostCoveredToExploringThr: 20                   # “几乎覆盖”降回“探索中”所需的未观测次数
+kCellUnknownToExploringThr: 1                          # “未知”转为“探索中”所需的观测次数
+
+# ==================== 可视化调试参数 ====================
+kExploringSubspaceMarkerColorGradientAlpha : true      # 探索子空间标记是否使用渐变透明度
+kExploringSubspaceMarkerColorMaxAlpha : 0.8            # 最大透明度值
+kExploringSubspaceMarkerColorR : 0.0                   # 标记颜色红色分量
+kExploringSubspaceMarkerColorG : 1.0                   # 绿色分量（默认绿色）
+kExploringSubspaceMarkerColorB : 0.0                   # 蓝色分量
+kExploringSubspaceMarkerColorA : 1.0                   # 不透明度
+kLocalPlanningHorizonMarkerColorR : 0.0                # 局部规划水平线颜色R
+kLocalPlanningHorizonMarkerColorG : 1.0                # 局部规划水平线颜色G
+kLocalPlanningHorizonMarkerColorB : 0.0                # 局部规划水平线颜色B
+kLocalPlanningHorizonMarkerColorA : 1.0                # 不透明度
+kLocalPlanningHorizonMarkerWidth : 0.3                 # 标记线的宽度（米）
+kLocalPlanningHorizonHeight : 3.0                      # 局部规划水平标记的高度（米）

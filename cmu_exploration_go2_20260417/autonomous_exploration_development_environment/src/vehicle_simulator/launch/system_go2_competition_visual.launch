@@ -1,0 +1,68 @@
+<launch>
+
+  <arg name="world_name" default="competition_scene"/>
+  <arg name="load_map" default="false"/>
+  <arg name="entry_sequence" default="true"/>
+  <arg name="vehicleHeight" default="0.75"/>
+  <arg name="cameraOffsetZ" default="0"/>
+  <arg name="vehicleX" default="0"/>
+  <arg name="vehicleY" default="-2.1"/>
+  <arg name="vehicleZ" default="0.6"/>
+  <arg name="vehicleYaw" default="1.5708"/>
+  <arg name="entrySpeed" default="0.25"/>
+  <arg name="plannerSpeed" default="0.45"/>
+  <arg name="checkTerrainConn" default="false"/>
+
+  <include file="$(find local_planner)/launch/local_planner.launch" >
+    <arg name="cameraOffsetZ" value="$(arg cameraOffsetZ)"/>
+    <arg name="autonomySpeed" value="$(arg plannerSpeed)"/>
+    <arg name="goalX" value="$(arg vehicleX)"/>
+    <arg name="goalY" value="$(arg vehicleY)"/>
+  </include>
+
+  <include file="$(find terrain_analysis)/launch/terrain_analysis.launch" />
+
+  <include file="$(find terrain_analysis_ext)/launch/terrain_analysis_ext.launch" >
+    <arg name="checkTerrainConn" value="$(arg checkTerrainConn)"/>
+  </include>
+
+  <include file="$(find sensor_scan_generation)/launch/sensor_scan_generation.launch" />
+
+  <include if="$(arg load_map)" file="$(find visualization_tools)/launch/visualization_tools.launch" >
+    <arg name="world_name" value="$(arg world_name)"/>
+  </include>
+
+  <node pkg="tf2_ros" type="static_transform_publisher" name="map_to_camera_init" args="$(arg vehicleX) $(arg vehicleY) $(arg vehicleZ) 0 0 0.707108 0.707106 /map /camera_init" />
+  <node pkg="tf2_ros" type="static_transform_publisher" name="body_to_sensor" args="0 0 0 0 0 0 /body /sensor" />
+  <node pkg="tf2_ros" type="static_transform_publisher" name="body_to_pelvis" args="0 0 0 0 0 0 /body /pelvis" />
+
+  <group if="$(arg entry_sequence)">
+    <node pkg="vehicle_simulator" type="go2_competition_entry_sequence.py" name="go2_competition_entry_sequence" output="screen">
+      <param name="door_id" value="main_entrance"/>
+      <param name="door_model" value="dynamic_main_entrance"/>
+      <param name="door_x" value="0.0"/>
+      <param name="door_y" value="0.0"/>
+      <param name="door_z" value="1.2"/>
+      <param name="door_yaw" value="1.5707963267948966"/>
+      <param name="prefer_door_service" value="false"/>
+      <param name="close_after_entry" value="true"/>
+      <param name="direct_drive" value="false"/>
+      <param name="entry_x" value="0.0"/>
+      <param name="entry_y" value="2.0"/>
+      <param name="entry_z" value="0.6"/>
+      <param name="entry_reached_y" value="1.45"/>
+      <param name="entry_reached_radius" value="0.8"/>
+      <param name="waypoint_rate" value="5.0"/>
+      <param name="entry_speed" value="$(arg entrySpeed)"/>
+      <param name="heading_kp" value="0.8"/>
+      <param name="max_yaw_rate" value="0.25"/>
+      <param name="start_delay" value="3.0"/>
+      <param name="require_clouds_before_start" value="false"/>
+      <param name="cloud_wait_timeout" value="20.0"/>
+      <param name="keep_alive" value="true"/>
+    </node>
+  </group>
+
+  <node launch-prefix="nice" pkg="rviz" type="rviz" name="rvizGA" args="-d $(find vehicle_simulator)/rviz/vehicle_simulator.rviz" respawn="true"/>
+
+</launch>
